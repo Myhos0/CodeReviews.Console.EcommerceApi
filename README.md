@@ -121,8 +121,6 @@ A global exception handler (`GlobalExceptionHandler`, implementing `IExceptionHa
 - **Design note:** No `DELETE` endpoints or soft-deletes were implemented for `Category`, `Product` or `Sale`. In a retail context, deleting a product or category that has already been sold would break the integrity of historical sale records (`SaleDetail`), since they depend on the original product data. Updates (`PATCH`) are favored over deletion instead, following the project's own suggestion that not every table needs every CRUD operation.
 - Remove the unused `Result`/legacy `GlobalExceptionHandlerMiddleware` in favor of the single `GlobalExceptionHandler` approach, or finish integrating `Result` consistently across services.
 - Integration tests.
-- CI/CD with GitHub Actions.
-- Docker support.
 
 # Resources Used
 
@@ -135,3 +133,4 @@ A global exception handler (`GlobalExceptionHandler`, implementing `IExceptionHa
 - Medium - Understanding REST and RESTful APIs: https://medium.com/@bpst.blog/understanding-rest-and-restful-apis-constraints-methods-and-examples-76b2d1b63003
 - Swagger / OpenAPI Documentation: https://swagger.io/docs/
 - The C# Academy - Ecommerce API Project: https://www.thecsharpacademy.com/project/18/ecommerce-api
+- Result Pattern by Milan Jovanovič: https://www.youtube.com/watch?v=WCCkEe_Hy2Y
